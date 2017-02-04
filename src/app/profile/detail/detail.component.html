@@ -1,0 +1,12 @@
+<form #detailForm="ngForm" >
+    <div class="flex-container" flexLayout="row" flex fxLayoutAlign="space-around center" fxLayoutWrap >
+        <md-input placeholder="Username" minlength="5" required fxFlex="40%" class="flex-item" [(ngModel)]="profile.username" name='username'></md-input>
+        <md-input placeholder="Name" required fxFlex="40%" class="flex-item" [(ngModel)]="profile.name" name='name'></md-input>
+        <md-input placeholder="Surname" required fxFlex="40%" class="flex-item" [(ngModel)]="profile.surname" name='surname'></md-input>
+        <md-input placeholder="Date of birth" fxFlex="40%" class="flex-item" [(ngModel)]="profile.dob" name='dob'></md-input>
+    </div>
+    <div class="form-actions flex-container" flexLayout="row" flex fxLayoutAlign="start center" fxLayoutWrap>
+        <button fxFlexOffset="80%" fx md-button [routerLink]="['/']">Cancel</button>
+        <button md-raised-button [disabled]='!detailForm.valid' (click)="save($event,detailForm)"  color="primary">Save</button>
+    </div>
+</form>

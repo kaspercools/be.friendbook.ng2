@@ -1,0 +1,8 @@
+
+<h2>Profileoverview</h2>
+<div class="flex-container" flexLayout="row" fxLayoutAlign="space-around  center" fxLayoutWrap> 
+  <button fxFlexOffset="90%"md-fab [routerLink]="['/create']">
+    <md-icon >add</md-icon>
+  </button>
+  <profile-card *ngFor="let profile of profiles" [profile]="profile"  (deleted)="refreshData()" fxFlex="28%" class="flex-item"></profile-card>
+</div>
